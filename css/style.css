@@ -523,6 +523,7 @@ footer {
     .banner-text3 {
         font-size: 70px;
         transform: translate(0, 100px);
+        white-space: nowrap;
     }
     .banner-text5 {
         font-size: 70px;
