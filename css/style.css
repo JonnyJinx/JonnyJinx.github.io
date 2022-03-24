@@ -107,10 +107,10 @@ body {
 
 /*Box that game's logo will fit into. Height is auto to ensure image is responsive to resizing.*/
 .logo-img {
-    max-width: 100%;
+    max-width: 80%;
     width: auto;
     height: auto;
-    padding: 0px 50px;
+    margin: 0 auto;
 }
 
 /*Box that logo will fit in. Is placed in a flex box so the logo can be centred vertically and horizontally.*/
