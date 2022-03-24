@@ -74,7 +74,7 @@ body {
 /*Hamburger menu that can be opened to show the nav bar on mobile devices. Is not visible by default until screen is at a width of 830px or less.*/
 .hamburger-menu {
     font-size: 30px;
-    margin-left: 10px;
+    text-align: center;
     padding-top: 7px;
     display: none;
 }
@@ -334,7 +334,108 @@ footer {
 }
 
 /*Media queries for altering the size and alignment of certain elements on the website at differing resolutions.*/
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 384px) {
+    #main-nav {
+        display: none;
+        text-align: left;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 25px;
+    }
+    #main-nav li {
+        display: block;
+        border-bottom: 1px solid black;
+        padding: 5px 0px 5px 0px;
+    }
+    #main-nav li:last-child {
+        border: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .content-box-left {
+      flex-direction: column-reverse;
+    }
+    .content-box-right {
+        flex-direction: column;
+    }
+    .img-box {
+        justify-content: center;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .img-box-img {
+        max-width: 500px;
+        height: auto;
+        overflow: hidden;
+    }
+    .text-area h2 {
+        text-align: center;
+        font-size: 40px;
+    }
+    .text-area p {
+        text-align: center;
+        font-size: 18px;
+    }
+    .top-bar {
+        text-align: center;
+    }
+    .button {
+        text-align: center;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .price-box {
+        justify-content: center;
+    }
+    .price {
+        margin: auto;
+    }
+    footer {
+        font-size: 18px;
+    }
+    .video {
+        width: auto;
+        overflow: hidden;
+    }
+    .index-banner {
+        text-align: center;
+    }
+    #features-banner, #switch-banner, #characters-banner, #dlc-banner {
+        text-align: center;
+        background-size: 400px, 400px, cover;
+        background-position: center;
+    }
+    #story-banner {
+        text-align: center;
+        background-size: 400px, 700px, cover;
+        background-position: center;
+        background-position-y: center, -40%;
+    }
+    .banner-text, .banner-text2, .banner-text4 {
+        font-size: 80px;
+        transform: translate(0, 90px);
+    }
+    .banner-text3 {
+        font-size: 70px;
+        line-height: 60px;
+        transform: translate(0, 80px);
+    }
+    .banner-text5 {
+        font-size: 70px;
+        line-height: 60px;
+        transform: translate(0, 80px);
+    }
+    .index-banner {
+        background-position-x: center;
+    }
+}
+
+@media only screen and (min-width: 384px) and (max-width: 830px) {
     #main-nav {
         display: none;
         text-align: left;
