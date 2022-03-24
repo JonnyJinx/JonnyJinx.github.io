@@ -1,0 +1,590 @@
+/*Allows the BigNoodleTitling font to be displayed if it is not installed on the user's computer*/
+@font-face {
+    font-family: 'BigNoodleTitling';
+    src: url(../fonts/big_noodle_titling.ttf) format('truetype');
+}
+
+/*Margin and padding set to 0px to make content flush to browser edges*/
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Mulish', Arial, sans-serif;
+}
+
+/*Top bar. Height is used to set height of the red bar and background colour is to make it red*/
+.top-bar {
+    height: 80px;
+    background-color: #E60012;
+}
+
+/*Logo that goes within the top-bar.*/
+.nintendo-logo {
+    margin-top: 15px;
+    height: 50px;
+    transition: 0.3s;
+}
+
+.nintendo-logo:hover {
+    box-shadow: 0 0 10px 5px white;
+    border-radius: 30px;
+}
+
+/*Nav bar. Has a striped background and casts a shadow.*/
+#navigation {
+    height: auto;
+    min-height: 55px;
+    background-color: white;
+    background-image: url(../images/navbg.png);
+    box-shadow: 0px 5px 10px black;
+}
+
+/*Content inside navigation bar.*/
+#main-nav {
+    margin: 0px;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 9px;
+}
+
+/*List of links within nav bar*/
+#main-nav li {
+    list-style-type: none;
+    display: inline;
+    padding: 0px 40px 0px 40px;
+    font-family: 'ASAP Condensed', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+/*Styling for links on list items. Creates a border that will display when the link is hovered over. When hovered over, font colour for the link becomes white with a black background*/
+
+#main-nav li a {
+    color: black;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+#main-nav li a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: black;
+}
+
+/*Hamburger menu that can be opened to show the nav bar on mobile devices. Is not visible by default until screen is at a width of 830px or less.*/
+.hamburger-menu {
+    font-size: 30px;
+    margin-left: 10px;
+    padding-top: 7px;
+    display: none;
+}
+
+.hamburger-menu i {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/*Transition gives a small delay to how quickly the font and background colour change when hovered over.*/
+.hamburger-menu i:hover {
+    color: white;
+    background-color: black;
+    transition: 0.3s;
+}
+
+/*Index page's banner. Height is used to set height of the image banner. Z-index and Position ensure that the nav bar's drop shadow is visible, otherwise it will be hidden by the banner.*/
+.index-banner {
+    z-index: -1;
+    height: 400px;
+    background-image: url(../images/banner.png);
+    background-color: wheat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/*Box that game's logo will fit into. Height is auto to ensure image is responsive to resizing.*/
+.logo-img {
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+}
+
+/*Box that logo will fit in. Is placed in a flex box so the logo can be centred vertically and horizontally.*/
+#logo-box {
+    height: 300px;
+    max-width: 450px;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: inline-flex;
+    align-items: center;
+}
+
+/*Most elements on site are placed within container to give some padding on the left and right of the site. VW units are used to assist with responsive design, ensuring the container is always a certain percentage of the viewport, rather than a fixed width.*/ 
+.container {
+    padding: 0px 10vw;
+    margin: 0 auto;
+}
+
+/*Styling for the divs that most website content goes into. There is a separate class for left and right content boxes as in the mobile version of the site, these content-boxes will require a different flex-direction, depending on if it is a left or right aligned content box.*/
+.content-box-left, .content-box-right {
+    padding: 20px 0px;
+}
+
+/*Border that will go around certain images on the website.*/
+.border {
+    border-style: solid;
+    border-width: 4px;
+    border-image: linear-gradient(to left, #02c0d4, #024ca0) 1;
+}
+
+/*Styling for headings for each content box, as well as prices on some pages.*/
+.heading, .price {
+    color: #02c0d4;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: 'BigNoodleTitling', 'Arial Narrow', Arial, sans-serif;    
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/*More specific styling for the prices, that differs from headings*/
+.price {
+    margin-right: 30px;
+    font-size: 40px;
+}
+
+/*Main text within content boxes.*/
+.text {
+    color: white;
+    font-size: 25px;
+}
+
+/*Styling for buttons on certain pages. Has a rounded border to give it more of a button-like appearance, and a transition for transitioning to the colour change when it is hovered over.*/
+.button {
+    color: white;
+    background-color: #E60012;
+    font-family: 'ASAP Condensed', sans-serif;
+    font-size: 25px;
+    border-radius: 30px;
+    padding: 8px 11px 8px 11px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+    max-width: 130px;
+    max-height: 28px;
+}
+
+.button p {
+    margin: 0 auto;
+}
+
+.button:hover {
+    background-color: #570e14;
+}
+
+/*Banners for all pages other than the index page. Different background images all require slightly different positioning due to varying size. Z-index and Position ensure that the nav bar's drop shadow is visible, otherwise it will be hidden by the banner.*/
+#features-banner {
+    height: 400px;
+    background-image: url(../images/paintstreak.png), url(../images/horserider.png), url(../images/botwbg.png);
+    background-color: #200810;
+    background-repeat: no-repeat;
+    background-position-x: 10%, 90%;
+    background-position-y: 47%, 35%;
+    background-size: 650px, 670px, cover;
+    position: relative;
+    z-index: -1;
+}
+
+#characters-banner {
+    height: 400px;
+    background-image: url(../images/paintstreak.png), url(../images/link2.png), url(../images/botwbg.png);
+    background-color: #200810;
+    background-repeat: no-repeat;
+    background-position-x: 10%, 75%;
+    background-position-y: 47%, 20%;
+    background-size: 650px, 400px, cover;
+    position: relative;
+    z-index: -1;
+}
+
+#switch-banner {
+    height: 400px;
+    background-image: url(../images/paintstreak.png), url(../images/zelda.png), url(../images/botwbg.png);
+    background-color: #200810;
+    background-repeat: no-repeat;
+    background-position-x: 10%, 80%;
+    background-position-y: 47%, 25%;
+    background-size: 650px, 500px, cover;
+    position: relative;
+    z-index: -1;
+}
+
+#story-banner {
+    height: 400px;
+    background-image: url(../images/paintstreak.png), url(../images/guardian.png), url(../images/botwbg.png);
+    background-color: #200810;
+    background-repeat: no-repeat;
+    background-position-x: 10%, 95%;
+    background-position-y: 47%, 25%;
+    background-size: 650px, 800px, cover;
+    position: relative;
+    z-index: -1;
+}
+
+#dlc-banner {
+    height: 400px;
+    background-image: url(../images/paintstreak.png), url(../images/botwdlc.png), url(../images/botwbg.png);
+    background-color: #200810;
+    background-repeat: no-repeat;
+    background-position-x: 10%, 77%;
+    background-position-y: 47%, 25%;
+    background-size: 650px, 400px, cover;
+    position: relative;
+    z-index: -1;
+}
+
+/*Large text on banners. Again, all have slightly different positioning due to differing text length, with some having different text-size.*/
+.banner-text, .banner-text2, .banner-text3, .banner-text4, .banner-text5 {
+    color: white;
+    font-family: 'BigNoodleTitling', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 140px;
+    text-shadow: 4px 5px 4px rgba(0, 0, 0, 0.7);
+    display: inline-flex;
+}
+
+.banner-text2 {
+    transform: translate(60px);
+}
+
+.banner-text3 {
+    transform: translate(0px, 53px);
+    font-size: 100px;
+}
+
+.banner-text4 {
+    transform: translate(130px);
+}
+
+.banner-text5 {
+    transform: translate(30px, 28px);
+    text-align: center;
+    line-height: 80px;
+    font-size: 100px;
+}
+
+/*Container for images in content boxes. Flex is used so that it can be displayed to the left or right of text.*/
+.img-box {
+    display: flex;
+    align-items: center;
+}
+
+/*Class for the image within the image container.*/
+.img-box-img {
+    height: 300px;
+}
+
+/*Container for video on index page*/
+.video {
+    width: 640px;
+    height: 360px;
+    margin-left: 10px;
+}
+
+/*Styling for footer.*/
+footer {
+    height: 35px;
+    background-color: #2C2C2C;
+    color: white;
+    text-align: center;
+    padding-top: 14px;
+    font-family: 'Mulish', Arial, sans-serif;
+    font-size: 20px;
+}
+
+/* Universal Classes, classes that can be added to specific html elements for additional styling */
+
+.center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.grey-bg {
+    background-image: linear-gradient(to bottom, #2C2C2C, #131313);
+}
+
+.left-margin {
+    margin-left: 30px;
+}
+
+.right-margin {
+    margin-right: 30px;
+}
+
+.black-text {
+    color: black;
+}
+
+/*Media queries for altering the size and alignment of certain elements on the website at differing resolutions.*/
+@media only screen and (max-width: 830px) {
+    #main-nav {
+        display: none;
+        text-align: left;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #main-nav li {
+        display: block;
+        border-bottom: 1px solid black;
+        padding: 5px 0px 5px 0px;
+    }
+    #main-nav li:last-child {
+        border: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .content-box-left {
+      flex-direction: column-reverse;
+    }
+    .content-box-right {
+        flex-direction: column;
+    }
+    .img-box {
+        justify-content: center;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .img-box-img {
+        max-width: 500px;
+        height: auto;
+        overflow: hidden;
+    }
+    .text-area h2 {
+        text-align: center;
+        font-size: 40px;
+    }
+    .text-area p {
+        text-align: center;
+        font-size: 18px;
+    }
+    .top-bar {
+        text-align: center;
+    }
+    .button {
+        text-align: center;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .price-box {
+        justify-content: center;
+    }
+    .price {
+        margin: auto;
+    }
+    footer {
+        font-size: 18px;
+    }
+    .video {
+        width: auto;
+        overflow: hidden;
+    }
+    .index-banner {
+        text-align: center;
+    }
+    #features-banner, #switch-banner, #characters-banner, #dlc-banner {
+        text-align: center;
+        background-size: 400px, 400px, cover;
+        background-position: center;
+    }
+    #story-banner {
+        text-align: center;
+        background-size: 400px, 700px, cover;
+        background-position: center;
+        background-position-y: center, -40%;
+    }
+    .banner-text, .banner-text2, .banner-text4 {
+        font-size: 90px;
+        transform: translate(0, 75px);
+    }
+    .banner-text3 {
+        font-size: 70px;
+        transform: translate(0, 100px);
+    }
+    .banner-text5 {
+        font-size: 70px;
+        line-height: 60px;
+        transform: translate(0, 80px);
+    }
+    .index-banner {
+        background-position-x: center;
+    }
+}
+
+@media only screen and (min-width: 830px) and (max-width: 992px) {
+    .text-area h2 {
+        font-size: 40px;
+    }
+    .text-area p {
+        text-align: justify;
+        font-size: 18px;
+    }
+    .img-box-img {
+        width: 340px;
+        height: auto;
+        overflow: hidden;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    footer {
+        font-size: 18px;
+    }
+    .video {
+        width: 640px;
+        height: 360px;
+    }
+    .button {
+        margin: 0px;
+        display: flex;
+        align-items: center;
+    }
+    #features-banner, #switch-banner, #characters-banner, #dlc-banner {
+        background-size: 500px, 400px, cover;
+        background-position-x: left, right;
+    }
+    #story-banner {
+        background-size: 500px, 600px, cover;
+        background-position-x: left, right;
+    }
+    .banner-text {
+        font-size: 100px;
+        transform: translate(50px, 50px);
+    }
+    .banner-text2 {
+        font-size: 100px;
+        transform: translate(90px, 50px);
+    }
+    .banner-text3 {
+        font-size: 90px;
+        transform: translate(0px, 65px);
+    }
+    .banner-text4 {
+        font-size: 100px;
+        transform: translate(140px, 50px);
+    }
+    .banner-text5 {
+        font-size: 70px;
+        line-height: 60px;
+        transform: translate(65px, 75px);
+    }
+    #main-nav li {
+        padding: 0 10px 0 10px;
+    }
+    #main-nav {
+        font-size: 25px;
+        padding-top: 11px;
+    }
+    .index-banner {
+        background-position-x: 40%;
+    }
+  }
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .text-area h2 {
+        font-size: 46px;
+    }
+    .text-area p {
+        text-align: justify;
+        font-size: 20px;
+    }
+    .container {
+        padding: 0 30px;
+    }
+    .video {
+        width: 426px;
+        height: 240px;
+    }
+    .button {
+        margin: 0px;
+        display: flex;
+        align-items: center;
+    }
+    #features-banner, #switch-banner {
+        background-size: 600px, 450px, cover;
+        background-position-x: left, right;
+    }
+    #characters-banner, #dlc-banner {
+        background-size: 600px, 400px, cover;
+        background-position-x: left, right;
+    }
+    #story-banner {
+        background-size: 600px, 700px, cover;
+        background-position-x: left, right, center;
+    }
+    .banner-text {
+        font-size: 120px;
+        transform: translate(45px, 25px);
+    }
+    .banner-text2 {
+        font-size: 120px;
+        transform: translate(80px, 25px);
+    }
+    .banner-text4 {
+        font-size: 120px;
+        transform: translate(160px, 25px);
+    }
+
+    .banner-text3 {
+        font-size: 90px;
+        transform: translate(10px, 65px);
+    }
+    .banner-text5 {
+        font-size: 90px;
+        line-height: 75px;
+        transform: translate(40px, 40px);
+    }
+    #main-nav li {
+        padding: 0 20px 0 20px;
+    }
+    .index-banner {
+        background-position-x: 20%;
+    }
+}
+  
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    #features-banner {
+        background-position-x: 10%, right;
+        background-size: 650px, 550px, cover;
+    }
+    #switch-banner {
+        background-position-x: 10%, right;
+        background-size: 650px, 500px, cover;
+    }
+    #story-banner {
+        background-position-x: 10%, right;
+        background-size: 650px, 700px, cover;
+    }
+    #characters-banner {
+        background-position-x: 10%, 80%;
+        background-size: 650px, 400px, cover;
+    }
+    #dlc-banner {
+        background-position-x: 10%, 90%;
+        background-size: 650px, 400px, cover;
+    }
+    #main-nav li {
+        padding: 0 30px 0 30px;
+    }
+}
