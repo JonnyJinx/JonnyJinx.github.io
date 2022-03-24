@@ -44,6 +44,7 @@ body {
     font-size: 30px;
     text-align: center;
     padding-top: 9px;
+    white-space: nowrap;
 }
 
 /*List of links within nav bar*/
